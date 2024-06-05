@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="imgs/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>Elysium Gastronomia</title>
+</head>
+<body>
+
+    <div id="preloader">
+        <div class="inner">
+            <img src="imgs/Logo.png" alt="Logo do Restaurante Elysium-Gastronomia" width="500" height="450">
+        </div>
+    </div>
+
+    <button onclick="scrollToTop()" id="backToTopBtn" aria-label="Voltar ao topo da página" title="Voltar ao Topo" accesskey="t">
+        <span id="accessKeyHint" style="display: none;">Alt+T</span>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+            <path d="M0 0h24v24H0V0z" fill="none"/>
+            <path d="M12 2L0 14h7v8h10v-8h7L12 2zm0 3.5l8.5 8.5h-5v5h-7v-5h-5l8.5-8.5z"/>
+        </svg>
+    </button>
+      
+
+<header>
+    <div class="container1">
+        <div class="topbar" id="topbar">
+            <i class="fas fa-wheelchair" aria-label="Ícone de cadeira de rodas"></i>
+            <button onclick="applyColorBlindnessFilter('protanopia')" aria-label="Aplicar filtro de protanopia" accesskey="1">Protanopia</button>
+            <button onclick="applyColorBlindnessFilter('deuteranopia')" aria-label="Aplicar filtro de deuteranopia" accesskey="2">Deuteranopia</button>
+            <button onclick="applyColorBlindnessFilter('tritanopia')" aria-label="Aplicar filtro de tritanopia" accesskey="3">Tritanopia</button>
+            <button onclick="invertColors()" aria-label="Alternar inversão de cores" accesskey="4">Inverter Cores</button>
+            <button onclick="grayscale()" aria-label="Alternar para tons de cinza" accesskey="5">Tons de Cinza</button>
+            <button onclick="increaseFontSize()" aria-label="Aumentar o tamanho da fonte" accesskey="6">Aumentar Fonte</button>
+            <button onclick="decreaseFontSize()" aria-label="Reduzir o tamanho da fonte" accesskey="7">Reduzir Fonte</button>
+            <button onclick="toggleNarrator()" aria-label="Alternar o narrador de tela" accesskey="8">Narrador</button>
+            <button onclick="showAccessKeys()" aria-label="Botão para mostrar os atalhos de teclado" accesskey="a">Alt+A para mostrar atalhos</button>
+            <button onclick="hideAccessKeys()" aria-label="Botão para ocultar os atalhos de teclado" accesskey="o">Alt+O para ocultar atalhos Keys</button>
+        </div>
+    </div>
+
+    <div class="cabeça">
+        <div class="container2">
+            <a href="#" class="logo">
+                <img src="imgs/Logo.png" alt="Logo do Restaurante Elysium Gastronomia" width="100" height="90">
+            </a>
+
+            <div class="menu"> 
+                <nav class="sidebar" id="sidebar">
+                    <ul class="lista-sidebar">
+                        <li onclick="toggleSidebar()">
+                            <a href="#" class="sidebar-link" aria-label="Fechar menu lateral">
+                                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#fcfcfc">
+                                    <path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/>
+                                </svg>
+                            </a>
+                        </li>
+                        <li class="item-sidebar">
+                            <a href="#home" class="sidebar-link">
+                                <div class="separador1"></div>
+                                <span class="span" aria-label="Link para a seção home">Home</span>
+                            </a>
+                        </li>
+                        <li class="item-sidebar">
+                            <a href="#menu" class="sidebar-link">
+                                <div class="separador1"></div>
+                                <span class="span" aria-label="Link para a seção Menu">Menu</span>
+                            </a>
+                        </li>
+                        <li class="item-sidebar">
+                            <a href="#reserva" class="sidebar-link">
+                                <div class="separador1"></div>
+                                <span class="span" aria-label="Link para a seção reservas">Reservas</span>
+                            </a>
+                        </li>
+
+                        <li class="item-sidebar">
+                            <a href="#pedido" class="sidebar-link">
+                                <div class="separador1"></div>
+                                <span class="span" aria-label="Link para a seção pedidos">Pedidos</span>
+                            </a>
+                        </li>
+                        <li class="item-sidebar">
+                            <a href="#sobrenos" class="sidebar-link">
+                                <div class="separador1"></div>
+                                <span class="span" aria-label="Link para a seção sobre nós">Sobre nós</span>
+                            </a>
+                        </li>
+                        <li class="item-sidebar">
+                            <a href="#contato" class="sidebar-link">
+                                <div class="separador1"></div>
+                                <span class="span" aria-label="Link para a seção contato">Contato</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav><!--sidebar-->
+            </div>
+
+            <nav class="navbar" id="home">
+                <ul class="lista-navbar">
+                    <li class="item-navbar">
+                        <a href="#menu" class="navbar-link fonte-ajustavel" accesskey="m">
+                            <div class="separador"></div>
+                            <span class="span" aria-label="Link para a seção Menu">Menu</span>
+                        </a>
+                    </li>
+                    <li class="item-navbar">
+                        <a href="#sobrenos" class="navbar-link fonte-ajustavel" accesskey="s">
+                            <div class="separador"></div>
+                            <span class="span" aria-label="Link para a seção sobre nós">Sobre nós</span>
+                        </a>
+                    </li>
+                    <li class="item-navbar">
+                        <a href="#reserva" class="navbar-link fonte-ajustavel" accesskey="r">
+                            <div class="separador"></div>
+                            <span class="span" aria-label="Link para a seção reservas">Reservas</span>
+                        </a>
+                    </li>
+                    <li class="item-navbar">
+                        <a href="#pedido" class="navbar-link fonte-ajustavel" accesskey="p">
+                            <div class="separador"></div>
+                            <span class="span" aria-label="Link para a seção pedidos">Pedidos</span>
+                        </a>
+                    </li>
+                    <li class="item-navbar">
+                        <a href="#contato" class="navbar-link fonte-ajustavel" accesskey="c">
+                            <div class="separador"></div>
+                            <span class="span" aria-label="Link para a seção contato">Contato</span>
+                        </a>
+                    </li>
+                    <li onclick="toggleSidebar()">
+                        <a href="#" class="menu-btn" aria-label="Menu lateral">
+                            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#fcfcfc"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg>
+                        </a>
+                    </li>
+                </ul>
+            </nav><!--navbar-->
+</header>
+<main>
+    <article>
+
+        <section class="secao-especial">
+            <img src="imgs/fundos/slide.png" alt="Elysium Gastronomia, explore a excelência culinária em nosso refinado ambiente.">
+        </section>
+
+        <section class="events-secao fonte-ajustavel" aria-label="Eventos">
+            <div class="texto-eventos">
+                <h1 aria-label="Eventos">Eventos</h1>
+            </div>
+            <div class="interface">
+                <div class="flex">
+                    <div class="events">
+                        <img src="imgs/comidas-ale/pizzabanner.jpg" alt="Noite da pizza, dia 06-07-2024 as 19 horas" width="285" height="336">
+                        <h3>
+                            <a href="#">Noite da Pizza <br> 06-07-2024 <br> 19h</a>
+                        </h3>
+                    </div>    
+                    <div class="events">
+                        <img src="imgs/fundos/dia-namorados.png" alt="Dia dos namorados, dia 12-06-2024 as 21 horas" width="285" height="336">
+                        <h3>
+                            <a href="#">Dia dos Namorados <br> 12-06-2024 <br> 21h</a>
+                        </h3>
+                    </div>
+                    <div class="events">
+                        <img src="imgs/comidas-ale/vinhobanner.jpg" alt="Noite de vinhos (Rolha livre), dia 20-08-2024 as 20 horas" width="285" height="336">
+                        <h3>
+                            <a href="#">Rolha Livre<br> 20-08-2024 <br> 20h</a>
+                        </h3>
+                    </div>
+                </div>
+            </div>
+        </section><!--events-secao fonte-ajustavel-->
+        
+        <section class="secao-sobrenos" id="sobrenos">
+            <div class="container">
+
+                <div class="sobrenos-conteudo">
+        
+                    <div class="texto-e-botao">
+                        <h1 aria-label="Nossa História">Nossa História</h1>
+
+                        <p aria-label="O Elysium Gastronomia nasceu do sonho dos chefs Anne, Chiara e Guilherme, que uniram seus talentos em 2024 para criar um restaurante que celebra a alta gastronomia. Em um ambiente acolhedor e elegante, o menu oferece pratos criativos e saborosos, elaborados com ingredientes frescos e sazonais. A equipe apaixonada garante um atendimento impecável e uma experiência única para cada cliente. Mais do que um restaurante, o Elysium Gastronomia é um espaço onde a paixão pela culinária se encontra com a arte de proporcionar momentos inesquecíveis.">  O Elysium Gastronomia nasceu do sonho dos chefs Anne, Chiara e Guilherme, que uniram seus talentos em 2024 para criar um restaurante que celebra a alta gastronomia. Em um ambiente acolhedor e elegante, o menu oferece pratos criativos e saborosos, elaborados com ingredientes frescos e sazonais. A equipe apaixonada garante um atendimento impecável e uma experiência única para cada cliente. Mais do que um restaurante, o Elysium Gastronomia é um espaço onde a paixão pela culinária se encontra com a arte de proporcionar momentos inesquecíveis.
+                        </p>
+                    </div>
+                        <img src="imgs/fundos/restaurante-chef.png" alt="Imagem do restaurante e um de nossos chefs" class="img-restaurante">
+                </div>
+            </div>
+        </section><!--secao-sobrenos-->
+
+        
+        <section class="formreserva" id="reserva">
+            <div class="container3">
+                <h1 aria-label="Faça sua Reserva">Faça a sua reserva</h1>
+                <form action="#" method="get">
+                <label for="name"><br> Nome: <br></label>
+                <input type="text" id="name" name="name" aria-label="Nome" required accesskey="l">
+            
+                <label for="email"><br> Email: <br></label>
+                <input type="email" id="email" name="email" aria-label="Email" required accesskey="x">
+            
+                <label for="phone"><br> Telefone: <br></label>
+                <input type="tel" id="tel" name="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="Formato: 123-456-7890" aria-label="Telefone" required accesskey="v">
+            
+                <label for="guests"><br>Número de Convidados: <br></label>
+                <select id="guests" name="guests" aria-label="Número de Convidados" required accesskey="b">
+                    <option value="1" class="opcao" aria-label="1 convidado">1</option>
+                    <option value="2" class="opcao" aria-label="2 convidados">2</option>
+                    <option value="3" class="opcao" aria-label="3 convidados">3</option>
+                    <option value="4" class="opcao" aria-label="4 convidados">4</option>
+                    <option value="5" class="opcao" aria-label="5 convidados">5</option>
+                    <option value="6" class="opcao" aria-label="6 convidados">6</option>
+                </select>
+            
+                <label for="date"><br> Data: <br></label>
+                <input type="date" id="date" name="data" aria-label="Data" required accesskey="n">
+            
+                <label for="time"><br> Horário: <br></label>
+                <input type="time" id="time" name="time" aria-label="Horário" required accesskey="j">
+            
+                <input type="submit" value="Reservar" aria-label="Reservar" accesskey="k">
+                </form>
+            </div>
+        </section><!--formreserva-->
+            
+        
+        <section class="localizaçao">
+
+            <h1 aria-label="Venha nos visitar">Venha nos visitar</h1>
+        
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3604.0244195130563!2d-51.47353252461135!3d-25.403993177578435!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ef462cdc2f72fb%3A0xbe73a2c1e8973c98!2sCentro%20Universit%C3%A1rio%20Campo%20Real!5e0!3m2!1spt-BR!2sbr!4v1716752631446!5m2!1spt-BR!2sbr" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" aria-label="Mapa mostrando a localizaçao do restaurante Elysium"></iframe>
+
+            <div class="localiza">
+                <div class="icon2">
+                    <ion-icon name="location-outline" aria-hidden="true"></ion-icon>
+                    <span aria-label="Endereço: R. Comendador Norberto, 1299 - Santa Cruz, Guarapuava - PR">R. Comendador Norberto, 1299 - Santa Cruz, Guarapuava - PR</span>
+                </div>
+            </div><!--localiza-->
+            
+            <div class="localiza">
+                <div class="icon2">
+                    <ion-icon name="time-outline" aria-hidden="true"></ion-icon>
+                    <span aria-label="Horário de funcionamento: 09:00 às 23:00 e  possuímos estacionamento exclusivo para nossos clientes, com entrada ao lado esquerdo do restaurante">09:00 às 23:00 <br>Possuímos estacionamento exclusivo para nossos clientes, com entrada ao lado esquerdo do restaurante</span>
+                </div>
+            </div><!--localiza-->
+        </section><!--localizaçao-->
+
+        <section class="formpedido" id="pedido">
+            <div class="container4">
+                <h1 aria-label="Faça seu pedido">Faça seu pedido</h1>
+                <form action="#" method="post">
+                    <label for="name">Nome:</label>
+                    <input type="text" id="name" name="name" required aria-label="Nome" accesskey="s">
+
+                    <label for="endereco--">Endereço:</label>
+                    <input type="text" id="endereco--" name="endereco--" required aria-label="Endereço" accesskey="g">
+            
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required aria-label="Email" accesskey="d">
+            
+                    <label for="phone">Telefone:</label>
+                    <input type="tel" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="Formato: 123-456-7890" required aria-label="Telefone, Formato: 123-456-7890" accesskey="f">
+            
+                    <label for="order">Pedido:</label>
+                    <textarea id="pedido" name="pedido" rows="4" required class="pedido" aria-label="Pedido" accesskey="y"></textarea>
+            
+                    <label for="deliverypaga">Método de Pagamento:</label>
+                    <select id="deliverypaga" name="deliverypaga" required aria-label="Método de Entrega" accesskey="q">
+                    <option value="">Selecione</option>
+                    <option value="deliverypaga" class="opcao">Dinheiro</option>
+                    <option value="pickuppaga" class="opcao">Cartão</option>
+                    </select>
+
+                    <label for="delivery">Método de Entrega:</label>
+                    <select id="delivery" name="delivery" required aria-label="Método de Entrega" accesskey="u">
+                    <option value="">Selecione</option>
+                    <option value="delivery" class="opcao">Entrega</option>
+                    <option value="pickup" class="opcao">Retirada no Local</option>
+                    </select>
+            
+                    <input type="submit" value="Enviar Pedido" aria-label="Enviar Pedido" accesskey="i">
+                </form>
+            </div>
+        </section><!--formpedido-->
+                
+            
+        <section class="menu-secao" id="menu">
+            <div class="nomes">
+                <h1 aria-label="Menu">Menu</h1>
+                <h2 aria-label="Entradas">Entradas</h2>
+            </div>
+            
+            <div class="list">
+                <div class="item">
+                <img src="imgs/Entradas/Ambientada/Bolinho de Salmão - full web.webp" alt="Bolinhos de Salmão: Bolinhos fritos de salmão temperado com ervas finas e especiarias. Preço: R$35">
+                <h3>Bolinhos de Salmão</h3>
+                <p>R$35</p>
+                </div>
+                <div class="item">
+                <img src="imgs/Entradas/Ambientada/Burrata Classica - full web.webp" alt="Burrata Clássica: Queijo burrata fresco com tomates frescos, manjericão e azeite de oliva. Preço: R$40">
+                <h3>Burrata Clássica</h3>
+                <p>R$40</p>
+                </div>
+                <div class="item">
+                <img src="imgs/Entradas/Ambientada/Salada Campos Elísios - Full web.webp" alt="Salada Campos Elísios: Salada verde mista com alface, rúcula, tomate cereja, queijo parmesão, croutons e molho vinagrete. Preço: R$40">
+                <h3>Salada Campos Elísios</h3>
+                <p>R$40</p>
+                </div>
+                <div class="item">
+                <img src="imgs/Entradas/Ambientada/Salada com Camarão - full web.webp" alt="Salada de Camarão: Salada verde mista com camarão grelhado, tomate cereja, palmito, abacaxi e molho de iogurte. Preço: R$40">
+                <h3>Salada de Camarão</h3>
+                <p>R$40</p>
+                </div>
+                <div class="item">
+                <img src="imgs/Entradas/Ambientada/Salada Completa - full web.webp" alt="Salada Completa: Salada verde mista com frango grelhado, presunto, queijo, ovo cozido, tomate, palmito, batata cozida e maionese. Preço: R$35">
+                <h3>Salada Completa</h3>
+                <p>R$35</p>
+                </div>
+                <div class="item">
+                <img src="imgs/Entradas/Ambientada/Tábua de Frios - full web.webp" alt="Tábua de Frios: Tábua com frios variados, como queijos, embutidos, frutas secas e pães. Preço: R$35">
+                <h3>Tábua de Frios</h3>
+                <p>R$35</p>
+                </div>
+            </div>
+        </section><!--menu-secao-->                
+                
+            <div class="nomes">
+                <h2 aria-label="Massas">Massas</h2>
+            </div>
+                    
+            <div class="list">
+                <div class="item">
+                    <img src="imgs/Massas/Ambientada/Lasanha Frita - full web.webp" alt="Lasanha Frita empanada e frita, recheada com carne moída, molho de tomate e queijo. Preço: R$60">
+                    <h3>Lasanha Frita</h3>
+                    <p>R$60</p>
+                </div>
+                <div class="item">
+                    <img src="imgs/Massas/Ambientada/Penne com Cubos de Mignon - full web.webp" alt="Penne ao molho sugo com cubos de filé mignon salteados. Preço: R$65">
+                    <h3>Penne com Cubos de Mignon</h3>
+                    <p>R$65</p>
+                </div>
+                <div class="item">
+                    <img src="imgs/Massas/Ambientada/Pirogue ao Molho Calabria - full.webp" alt="Pirogue (massa recheada) com molho de linguiça calabresa e queijo. Preço: R$60">
+                    <h3>Pirogue ao Molho Calabria</h3>
+                    <p>R$60</p>
+                </div>
+                <div class="item">
+                    <img src="imgs/Massas/Ambientada/Talharim ao Molho Bolonhesa - full web.webp" alt="Talharim ao molho bolonhesa tradicional com carne moída, legumes e especiarias. Preço: R$65">
+                    <h3>Talharim ao Molho Bolonhesa</h3>
+                    <p>R$65</p>
+                </div>
+                <div class="item">
+                    <img src="imgs/Massas/Ambientada/Tortellini de Maçã - full.webp" alt="Tortellini recheado com maçã caramelizada e queijo brie, servido ao molho de manteiga e sálvia. Preço: R$65">
+                    <h3>Tortellini de Maçã</h3>
+                    <p>R$65</p>
+                </div>
+                <div class="item">
+                    <img src="imgs/Massas/Ambientada/pâtes à la sauce pesto.png" alt="Pâtes ao molho pesto com manjericão fresco, pinhões, queijo parmesão e azeite de oliva. Preço: R$60">
+                    <h3>Pâtes à la Sauce Pesto</h3>
+                    <p>R$60</p>
+                </div>
+            </div><!--list-->
+        
+            <div class="nomes">
+                <h2 aria-label="Pratos Príncipais">Pratos Príncipais</h2>
+            </div>
+        
+            <div class="list">
+                <div class="item">
+                    <img src="imgs/Principais/Ambientada/Bacalhau - full web.webp" alt="Prato de Bacalhau: Filetes de bacalhau grelhados servidos com legumes salteados e batatas cozidas. Preço: R$80">
+                    <h3>Bacalhau</h3>
+                    <p>R$80</p>
+                </div>
+                <div class="item">
+                    <img src="imgs/Principais/Ambientada/Bife de Chorizo com Talharim a La Carbonara - full web.webp" alt="Bife de Chorizo com Talharim à La Carbonara: Bife de chorizo grelhado acompanhado de talharim com molho à carbonara. Preço: R$75">
+                    <h3>Bife de Chorizo com Talharim a La Carbonara</h3>
+                    <p>R$75</p>
+                </div>
+                <div class="item">
+                    <img src="imgs/Principais/Ambientada/Bife de Chorizo com Talharim ao Sugo - full web.webp" alt="Bife de Chorizo com Talharim ao Sugo: Bife de chorizo grelhado acompanhado de talharim com molho de tomate. Preço: R$75">
+                    <h3>Bife de Chorizo com Talharim ao Sugo</h3>
+                    <p>R$75</p>
+                </div>
+                <div class="item">
+                    <img src="imgs/Principais/Ambientada/French Rack de Cordeiro com Aligot - Full web.webp" alt="French Rack de Cordeiro com Aligot: Costeletas de cordeiro assadas servidas com aligot (purê de batatas com queijo). Preço: R$80">
+                    <h3>French Rack de Cordeiro com Aligot</h3>
+                    <p>R$80</p>
+                </div>
+                <div class="item">
+                    <img src="imgs/Principais/Ambientada/Mignon ao Poivre - full.webp" alt="Mignon ao Poivre: Filé mignon grelhado com molho de pimenta do reino. Preço: R$80">
+                    <h3>Mignon ao Poivre</h3>
+                    <p>R$80</p>
+                </div>
+                <div class="item">
+                    <img src="imgs/Principais/Ambientada/Mignon à Parmegiana - full web.webp" alt="Mignon à Parmegiana: Filé mignon empanado e frito com molho de tomate e queijo mussarela. Preço: R$80">
+                    <h3>Mignon à Parmegiana</h3>
+                    <p>R$80</p>
+                </div>
+                <div class="item">
+                    <img src="imgs/Principais/Ambientada/Salmão Grelhado com Crosta de Parmesão e Legumes - full web.webp" alt="Salmão Grelhado com Crosta de Parmesão e Legumes: Filé de salmão grelhado com crosta de parmesão e legumes salteados. Preço: R$75">
+                    <h3>Salmão Grelhado com Crosta de Parmesão e Legumes</h3>
+                    <p>R$75</p>
+                </div>
+                <div class="item">
+                    <img src="imgs/Principais/Ambientada/Tilápia à Belle Munière - full web.webp" alt="Tilápia à Belle Munière: Filé de tilápia empanado e frito com manteiga e limão. Preço: R$80">
+                    <h3>Tilápia à Belle Munière</h3>
+                    <p>R$80</p>
+                </div>
+                <div class="item">
+                    <img src="imgs/Principais/Ambientada/risotto au fromage Époisses et sauce au vin blanc.jpeg" alt="Risotto de Legumes Grelhados com Carne Branca ao Molho Shoyu: Risotto de legumes grelhados com carne branca e molho shoyu. Preço: R$80">
+                    <h3>Risotto de Legumes Grelhados com Carne Branca ao Molho Shoyu</h3>
+                    <p>R$80</p>
+                </div>
+            </div><!--list-->                      
+        
+            <div class="nomes">
+                <h2 aria-label="Risotos">Risotos</h2>
+            </div>
+        
+            <div class="list">
+                <div class="item">
+                    <img src="imgs/Risotos/Ambientada/Risoto a Marineira - full.webp" alt="Risoto à Mineira: Risoto de frango com legumes e couve, finalizado com queijo parmesão. Preço: R$75">
+                    <h3>Risoto a Mineira</h3>
+                    <p>R$75</p>
+                </div>
+                <div class="item">
+                    <img src="imgs/Risotos/Ambientada/Risoto ao Mare - full web.webp" alt="Risoto ao Mare: Risoto de frutos do mar com legumes e vinho branco. Preço: R$75">
+                    <h3>Risoto ao Mare</h3>
+                    <p>R$75</p>
+                </div>
+                <div class="item">
+                    <img src="imgs/Risotos/Ambientada/Risoto Vegetariano - full.webp" alt="Risoto Vegetariano: Risoto de legumes com cogumelos e queijo parmesão. Preço: R$70">
+                    <h3>Risoto Vegetariano</h3>
+                    <p>R$70</p>
+                </div>
+            </div><!--list-->
+    
+            <div class="nomes">
+                <h2 aria-label="Sopas">Sopas</h2>
+            </div>
+        
+            <div class="list">
+                <div class="item">
+                    <img src="imgs/Sopas/Ambientada/Sopa de Agnolini de Queijo - full.webp" alt="Sopa de Agnolini de Queijo: Caldo de legumes com agnolini recheados de queijo. Preço: R$35">
+                    <h3>Sopa de Agnolini de Queijo</h3>
+                    <p>R$35</p>
+                </div>
+                <div class="item">
+                    <img src="imgs/Sopas/Ambientada/Sopa de Legumes - full web.webp" alt="Sopa de Legumes: Caldo de legumes frescos com croutons. Preço: R$35">
+                    <h3>Sopa de Legumes</h3>
+                    <p>R$35</p>
+                </div>
+                <div class="item">
+                    <img src="imgs/Sopas/Ambientada/Sopa Minestrone - full web.webp" alt="Sopa Minestrone: Sopa italiana de legumes com macarrão e pesto. Preço: R$40">
+                    <h3>Sopa Minestrone</h3>
+                    <p>R$40</p>
+                </div>
+            </div><!--list-->
+        </section>
+    </article>
+</main>
+<footer>
+    <div class="content" id="contato">
+        <div class="left box">
+            <address class="item-topbar">
+                <ion-icon name="location-outline" aria-hidden="true"></ion-icon>
+                <span aria-label="Endereço: R. Comendador Norberto, 1299 - Santa Cruz, Guarapuava - PR">R. Comendador Norberto, 1299 - Santa Cruz, Guarapuava - PR</span>
+            </address>
+
+            <div class="item-topbar">
+                <div class="icon2">
+                    <ion-icon name="time-outline" aria-hidden="true"></ion-icon>
+                    <span aria-label="Horário de funcionamento: 09:00 às 23:00">09:00 às 23:00</span>
+                </div>
+            </div>
+
+            <div class="item-topbar">
+                <div class="icon">
+                    <ion-icon name="call-outline" aria-hidden="true">+55 42 99999-9999</ion-icon>
+                    <span aria-label="Telefone para contato: +55 42 99999-9999" class="span"> +55 42 99999-9999</span>
+                </div>
+            </div>
+
+            <div class="item-topbar">
+                <div class="icon">
+                    <ion-icon name="mail-outline" aria-hidden="true"></ion-icon>
+                    <span class="span">
+                        <a href="mailto:elysiumgastronomia@restaurante.com" aria-label="Enviar email para Elysium Gastronomia">elysiumgastronomia@restaurante.com</a>
+                    </span>
+                    </div>
+            </div>
+        </div>
+</footer>
+
+    <script src="js/index.js"></script>
+
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+</html>
+
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" style="display: none;">
+    <defs>
+        <filter id="protanopia">
+            <feColorMatrix type="matrix" values="0.567, 0.433, 0, 0, 0,
+                                                  0.558, 0.442, 0, 0, 0,
+                                                  0, 0.242, 0.758, 0, 0,
+                                                  0, 0, 0, 1, 0"/>
+        </filter>
+        <filter id="deuteranopia">
+            <feColorMatrix type="matrix" values="0.625, 0.375, 0, 0, 0,
+                                                  0.7, 0.3, 0, 0, 0,
+                                                  0, 0.3, 0.7, 0, 0,
+                                                  0, 0, 0, 1, 0"/>
+        </filter>
+        <filter id="tritanopia">
+            <feColorMatrix type="matrix" values="0.95, 0.05, 0, 0, 0,
+                                                  0, 0.433, 0.567, 0, 0,
+                                                  0, 0.475, 0.525, 0, 0,
+                                                  0, 0, 0, 1, 0"/>
+        </filter>
+    </defs>
+</svg>
+
+<script src="js/preloader.js"></script>
